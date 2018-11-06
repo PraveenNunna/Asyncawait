@@ -7,9 +7,9 @@ using System.Threading;
 
 namespace AsynchronousFileRead
 {
-    internal class MultiThreadRunner
+    public class MultiThreadRunner
     {
-        public volatile bool cancelWorkerThread = false;
+        public bool cancelWorkerThread = false;
 
         public void RunMultipleThreads()
         {
