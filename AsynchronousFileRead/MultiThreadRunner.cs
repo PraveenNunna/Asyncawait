@@ -9,6 +9,8 @@ namespace AsynchronousFileRead
 {
     public class MultiThreadRunner
     {
+        //public volatile bool cancelWorkerThread = false;
+
         public bool cancelWorkerThread = false;
 
         public void RunMultipleThreads()
@@ -35,11 +37,15 @@ namespace AsynchronousFileRead
 
         private void DoWork()
         {
+            Console.WriteLine("DoWork started.");
+
             while (!cancelWorkerThread)
             {
                 Thread.Sleep(1000);
                 Console.WriteLine($"I am working right now.");
             }
+
+            Console.WriteLine("Do work ended.");
         }
 
         private void Sayhi()
